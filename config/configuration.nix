@@ -20,6 +20,7 @@
 		./networkmanager.nix
 		./documentation.nix
 		./users/skowriii/skowriii.nix
+		./home-manager.nix
 		./shell.nix
 		./display-manager.nix
 		./development.nix

@@ -25,19 +25,7 @@
 				inherit inputs;
 				globals = import ./config/globals.nix;
 			};
-			modules = [
-				./config/configuration.nix
-				home-manager.nixosModules.home-manager {
-					home-manager.useGlobalPkgs = true;
-					home-manager.useUserPackages = true;
-					home-manager.startAsUserService = true;
-					home-manager.extraSpecialArgs = {
-						inherit inputs;
-						globals = import ./config/globals.nix;
-					};
-					home-manager.users.skowriii = ./config/users/home.nix;
-				}
-			];
+			modules = [./config/configuration.nix];
 		};
 	};
 }
