@@ -14,6 +14,7 @@
 				../bluetooth.nix
 				../display-manager.nix
 				../users/skowriii.nix
+				../home-manager.nix
 				../systemd.nix
 				../gaming.nix
 			];
