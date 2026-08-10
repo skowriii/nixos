@@ -19,7 +19,7 @@
 		./base.nix
 		./networkmanager.nix
 		./documentation.nix
-		./users/skowriii.nix
+		./users/skowriii/skowriii.nix
 		./shell.nix
 		./display-manager.nix
 		./development.nix
