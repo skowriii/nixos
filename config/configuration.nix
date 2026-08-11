@@ -31,6 +31,7 @@
 		./gaming.nix
 		# ./printer.nix
 		./systemd.nix
+		./extras/nbfc.nix
 		./extras/cloudflare.nix
 		./extras/docker.nix
 		./extras/easyeffects.nix

@@ -1,24 +1,9 @@
 { pkgs, globals, ... }:
 
 {
-	environment.etc."nbfc/nbfc.json".text = builtins.toJSON {SelectedConfigId = globals.nbfcModel;};
-
 	systemd.services = {
-		"NetworkManager-wait-online".enable = false;
-		"nbfc_service" = {
-			enable = true;
-			description = "NoteBook FanControl service";
-			path = [pkgs.kmod];
-			serviceConfig = {
-				Type = "simple";
-				ExecStart = "${pkgs.nbfc-linux}/bin/nbfc_service --config-file /etc/nbfc/nbfc.json";
-				Restart = "on-failure";
-				RestartSec = 5;
-				StateDirectory = "nbfc";
-			};
-			wantedBy = ["multi-user.target"];
-		};
-		"fix-usb-wakeup" = {
+		NetworkManager-wait-online.enable = false;
+		fix-usb-wakeup = {
 			enable = false;
 			description = "Whitelist keyboard for ACPI wakeup";
 			after = ["multi-user.target"];
@@ -35,7 +20,7 @@
 				'';
 			};
 		};
-		"network-reconnected" = {
+		network-reconnected = {
 			description = "Update NextDNS related IP address";
 			after = ["network-online.target"];
 			wants = ["network-online.target"];

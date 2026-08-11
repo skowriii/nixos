@@ -4,7 +4,7 @@
 	specialisation.gaming = {
 		inheritParentConfig = false;
 
-		configuration = { pkgs, ... }: {
+		configuration = {
 			imports = [
 				../hardware-configuration.nix
 				../filesystems.nix
@@ -17,6 +17,7 @@
 				../home-manager.nix
 				../systemd.nix
 				../gaming.nix
+				../extras/nbfc.nix
 			];
 
 			nixpkgs.config.allowUnfree = true;
@@ -50,8 +51,6 @@
 				};
 				amdgpu.overdrive.enable = true;
 			};
-
-			environment.systemPackages = [pkgs.nbfc-linux];
 
 			programs.zsh.enable = true;
 

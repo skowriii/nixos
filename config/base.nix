@@ -29,7 +29,7 @@
 		keyMap = "pl";
 	};
 
-	environment.systemPackages = with pkgs; [git curl wget mold brightnessctl udiskie nbfc-linux acpi acpica-tools];
+	environment.systemPackages = with pkgs; [git curl wget mold brightnessctl udiskie acpi acpica-tools];
 
 	programs = {
 		nh = {
