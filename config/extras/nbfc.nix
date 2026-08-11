@@ -12,7 +12,7 @@
 		path = [pkgs.kmod];
 		serviceConfig = {
 			Type = "simple";
-			ExecStart = "${pkgs.nbfc-linux}/bin/nbfc_service";
+			ExecStart = "${pkgs.nbfc-linux}/bin/nbfc_service --config-file /etc/nbfc/nbfc.json";
 			Restart = "on-failure";
 			RestartSec = 5;
 			StateDirectory = "nbfc";
