@@ -6,14 +6,7 @@
 		fzf.fuzzyCompletion = true;
 		lazygit.enable = true;
 		zoxide.enable = true;
-		zsh = {
-			enable = true;
-			# loginShellInit = ''
-			# 	if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
-			# 		exec start-hyprland
-			# 	fi
-			# '';
-		};
+		zsh.enable = true;
 		foot.enable = true;
 	};
 
