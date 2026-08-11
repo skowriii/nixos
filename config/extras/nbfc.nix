@@ -17,6 +17,7 @@
 			RestartSec = 5;
 			StateDirectory = "nbfc";
 		};
+		startLimitIntervalSec = 60;
 		wantedBy = ["multi-user.target"];
 	};
 }
