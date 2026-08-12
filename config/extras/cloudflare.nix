@@ -1,7 +1,5 @@
 { pkgs, ... }:
 
 {
-	services.cloudflared.enable = true;
-
-	environment.systemPackages = [pkgs.wrangler];
+	environment.systemPackages = with pkgs; [wrangler cloudflared];
 }

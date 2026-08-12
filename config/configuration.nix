@@ -10,11 +10,10 @@
 		};
 	};
 
-	nixpkgs.config.allowUnfree = true;
-
 	imports = [
 		./hardware-configuration.nix
 		./filesystems.nix
+		./shared/common.nix
 		./boot.nix
 		./base.nix
 		./networkmanager.nix
@@ -44,6 +43,4 @@
 		./extras/wine.nix
 		./specializations/gaming.nix
 	];
-
-	system.stateVersion = "26.05";
 }

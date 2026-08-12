@@ -23,7 +23,7 @@
 		nixosConfigurations.nixbob = nixpkgs.lib.nixosSystem {
 			specialArgs = {
 				inherit inputs;
-				globals = import ./config/globals.nix;
+				globals = import ./config/shared/globals.nix;
 			};
 			modules = [./config/configuration.nix];
 		};

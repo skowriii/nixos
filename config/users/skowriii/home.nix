@@ -23,8 +23,6 @@
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.ssh";
 			dotfiles.source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/dotfiles";
-			Games.source =
-				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/Games";
 			Projects.source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/Projects";
 			wallpapers.source =
@@ -128,10 +126,6 @@
 			# 		config.lib.file.mkOutOfStoreSymlink
 			# 		"${globals.dotfilesDirectory}/home/.config/OpenTabletDriver/settings.json";
 			# };
-			spicetify = {
-				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/spicetify";
-				force = true;
-			};
 			spotdl = {
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/spotdl";
 				force = true;
