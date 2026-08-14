@@ -19,10 +19,7 @@
 		nix-ld.enable = true;
 	};
 
-	services = {
-		tlp.enable = true;
-		openssh.enable = true;
-	};
+	services.tlp.enable = true;
 
 	powerManagement.cpuFreqGovernor = "schedutil";
 }
