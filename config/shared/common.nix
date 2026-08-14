@@ -33,7 +33,7 @@
 		keyMap = "pl";
 	};
 
-	environment.systemPackages = with pkgs; [git curl wget mold brightnessctl];
+	environment.systemPackages = with pkgs; [git curl wget mold brightnessctl nextdns];
 
 	services = {
 		nohang.enable = true;
@@ -46,6 +46,10 @@
 			};
 		};
 		libinput.enable = true;
+		nextdns = {
+			enable = true;
+			arguments = ["-cache-size" "10MB"];
+		};
 	};
 
 	systemd.oomd.enable = false;
