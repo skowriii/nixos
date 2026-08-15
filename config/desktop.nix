@@ -1,7 +1,19 @@
 { pkgs, inputs, lib, ... }:
 
 let
-	hyprqt6engine = inputs.hyprqt6engine.packages.${pkgs.stdenv.hostPlatform.system}.hyprqt6engine.overrideAttrs (old: {
+	system = pkgs.stdenv.hostPlatform.system;
+
+	hyprutils = inputs.hyprqt6engine.inputs.hyprutils.packages.${system}.hyprutils.override {
+		inherit (pkgs) stdenv;
+	};
+	hyprlang = inputs.hyprqt6engine.inputs.hyprlang.packages.${system}.hyprlang.override {
+		inherit (pkgs) stdenv;
+		inherit hyprutils;
+	};
+	hyprqt6engine = (inputs.hyprqt6engine.packages.${system}.hyprqt6engine.override {
+		inherit (pkgs) stdenv;
+		inherit hyprutils hyprlang;
+	}).overrideAttrs (old: {
 		buildInputs = old.buildInputs ++ [pkgs.kdePackages.kcolorscheme pkgs.kdePackages.kconfig];
 	});
 in {
