@@ -1,9 +1,9 @@
-{ ... }:
+{ config, ... }:
 
 {
-	hardware.bluetooth.enable = true;
+	hardware.bluetooth.enable = config.modules.bluetooth;
 
-	services.blueman.enable = true;
+	services.blueman.enable = config.modules.bluetooth;
 
-	boot.extraModprobeConfig = "options bluetooth disable_ertm=Y";
+	boot.extraModprobeConfig = if config.modules.bluetooth then "options bluetooth disable_ertm=Y" else "";
 }

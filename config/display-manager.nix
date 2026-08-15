@@ -1,7 +1,7 @@
-{ ... }:
+{ config, ... }:
 
 {
-	services.displayManager.ly = {
+	services.displayManager.ly = if config.modules.displayManager then {
 		enable = true;
 		settings = {
 			animation = "dur_file";
@@ -10,5 +10,5 @@
 			gameoflife_fg = "0x00FFFFFF";
 			full_color = true;
 		};
-	};
+	} else {};
 }

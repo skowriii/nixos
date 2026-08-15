@@ -1,15 +1,6 @@
 { inputs, ... }:
 
 {
-	nix = {
-		registry = { nixpkgs.flake = inputs.nixpkgs; };
-		settings = {
-			max-jobs = 2;
-			cores = 2;
-			experimental-features = ["nix-command" "flakes"];
-		};
-	};
-
 	imports = [
 		./hardware-configuration.nix
 		./filesystems.nix
@@ -28,7 +19,7 @@
 		./bluetooth.nix
 		./fonts.nix
 		./gaming.nix
-		# ./printer.nix
+		./printer.nix
 		./systemd.nix
 		./extras/nbfc.nix
 		./extras/cloudflare.nix
@@ -36,11 +27,27 @@
 		./extras/easyeffects.nix
 		./extras/neovim.nix
 		./extras/obs.nix
-		# ./extras/opentabletdriver.nix
+		./extras/opentabletdriver.nix
 		./extras/spotify.nix
 		./extras/tmux.nix
-		# ./extras/virtualization.nix
+		./extras/virtualization.nix
 		./extras/wine.nix
 		./specializations/gaming.nix
 	];
+
+	nix = {
+		registry = { nixpkgs.flake = inputs.nixpkgs; };
+		settings.experimental-features = ["nix-command" "flakes"];
+	};
+
+	modules = {
+		cloudflare = true;
+		docker = true;
+		easyeffects = true;
+		neovim = true;
+		obs = true;
+		spotify = true;
+		tmux = true;
+		wine = true;
+	};
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, globals, ... }:
+{ config, osConfig, pkgs, globals, ... }:
 
 {
 	home = {
@@ -6,13 +6,16 @@
 		homeDirectory = "/home/skowriii";
 		stateVersion = "26.05";
 		activation = {
-			spotifyPrefs = config.lib.dag.entryAfter ["writeBoundary"] ''
-				mkdir -p "$HOME/.config/spotify"
+			spotifyPrefs =
+				if osConfig.modules.spotify then
+					config.lib.dag.entryAfter ["writeBoundary"] ''
+						mkdir -p "$HOME/.config/spotify"
 
-				if ! grep -q "^storage.size=4096$" "$HOME/.config/spotify/prefs" 2>/dev/null; then
-					echo "storage.size=4096" >> "$HOME/.config/spotify/prefs"
-				fi
-			'';
+						if ! grep -q "^storage.size=4096$" "$HOME/.config/spotify/prefs" 2>/dev/null; then
+							echo "storage.size=4096" >> "$HOME/.config/spotify/prefs"
+						fi
+					''
+				else "";
 		};
 		file = {
 			".gnupg".source =
@@ -44,8 +47,10 @@
 			".local/bin/sscli".source =
 				config.lib.file.mkOutOfStoreSymlink
 					"${globals.rootDirectory}/Projects/Applications/QML/ss/Scripts/sscli/sscli";
-			".tmux.conf".source =
-				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.tmux.conf";
+			".tmux.conf" = {
+				enable = osConfig.modules.tmux;
+				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.tmux.conf";
+			};
 			".password-store".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.password-store";
 		};
@@ -94,37 +99,45 @@
 				force = true;
 			};
 			nvim = {
+				enable = osConfig.modules.neovim;
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/nvim";
 				force = true;
 			};
 			easyeffects = {
+				enable = osConfig.modules.easyeffects;
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/easyeffects";
 				force = true;
 			};
 			tmux = {
+				enable = osConfig.modules.tmux;
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/tmux";
 				force = true;
 			};
 			smug = {
+				enable = osConfig.modules.tmux;
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/smug";
 				force = true;
 			};
-			# "OpenTabletDriver/Plugins" = {
-			# 	source =
-			# 		config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/OpenTabletDriver/Plugins";
-			# 	force = true;
-			# };
-			# "OpenTabletDriver/Presets" = {
-			# 	source =
-			# 		config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/OpenTabletDriver/Presets";
-			# 	force = true;
-			# };
-			# "OpenTabletDriver/settings.json" = {
-			# 	source =
-			# 		config.lib.file.mkOutOfStoreSymlink
-			# 		"${globals.dotfilesDirectory}/home/.config/OpenTabletDriver/settings.json";
-			# };
+			"OpenTabletDriver/Plugins" = {
+				enable = osConfig.modules.opentabletdriver;
+				source =
+					config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/OpenTabletDriver/Plugins";
+				force = true;
+			};
+			"OpenTabletDriver/Presets" = {
+				enable = osConfig.modules.opentabletdriver;
+				source =
+					config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/OpenTabletDriver/Presets";
+				force = true;
+			};
+			"OpenTabletDriver/settings.json" = {
+				enable = osConfig.modules.opentabletdriver;
+				source =
+					config.lib.file.mkOutOfStoreSymlink
+					"${globals.dotfilesDirectory}/home/.config/OpenTabletDriver/settings.json";
+			};
 			spotdl = {
+				enable = osConfig.modules.spotify;
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/spotdl";
 				force = true;
 			};

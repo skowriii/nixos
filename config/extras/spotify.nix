@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 let
 	spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
@@ -6,7 +6,7 @@ in
 {
 	imports = [inputs.spicetify-nix.nixosModules.spicetify];
 
-	programs.spicetify = {
+	programs.spicetify = if config.modules.spotify then {
 		enable = true;
 		enabledExtensions = with spicePkgs.extensions; [
 			adblock
@@ -22,7 +22,7 @@ in
 				name = "startup-page.js";
 			}
 		];
-	};
+	} else {};
 
-	environment.systemPackages = [pkgs.spotdl];
+	environment.systemPackages = if config.modules.spotify then [pkgs.spotdl] else [];
 }

@@ -1,12 +1,12 @@
-{ pkgs, globals, ... }:
+{ config, pkgs, globals, ... }:
 
 {
-	environment = {
+	environment = if config.modules.nbfc then {
 		systemPackages = [pkgs.nbfc-linux];
 		etc."nbfc/nbfc.json".text = builtins.toJSON { SelectedConfigId = globals.nbfcModel; };
-	};
+	} else {};
 
-	systemd.services.nbfc_service = {
+	systemd.services.nbfc_service = if config.modules.nbfc then {
 		enable = true;
 		description = "NoteBook FanControl service";
 		path = [pkgs.kmod];
@@ -22,5 +22,5 @@
 		};
 		startLimitIntervalSec = 60;
 		wantedBy = ["multi-user.target"];
-	};
+	} else {};
 }

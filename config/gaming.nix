@@ -1,5 +1,5 @@
-# { pkgs, ... }:
-{ ... }:
+# { config, pkgs, ... }:
+{ config, ... }:
 
 {
 	programs = {
@@ -27,7 +27,7 @@
 
 	# environment.systemPackages = [pkgs.osu-lazer-bin];
 
-	hardware.xpadneo.enable = true;
+	hardware.xpadneo.enable = config.modules.bluetooth;
 
 	boot = {
 		extraModprobeConfig = "options hid_xpadneo disable_shift_mode=Y";

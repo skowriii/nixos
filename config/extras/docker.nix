@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-	virtualisation.docker = {
+	virtualisation.docker = if config.modules.docker then {
 		enable = true;
 		enableOnBoot = false;
 		autoPrune = {
@@ -9,7 +9,7 @@
 			persistent = true;
 		};
 		extraPackages = [pkgs.docker-compose];
-	};
+	} else {};
 
-	users.users.skowriii.extraGroups = ["docker"];
+	users.users.skowriii.extraGroups = if config.modules.docker then ["docker"] else [];
 }

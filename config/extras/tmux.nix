@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-	programs.tmux.enable = true;
+	programs.tmux.enable = config.modules.tmux;
 
-	environment.systemPackages = [pkgs.smug];
+	environment.systemPackages = if config.modules.tmux then [pkgs.smug] else [];
 }

@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-	environment.systemPackages = with pkgs; [
+	environment.systemPackages = with pkgs; if config.modules.neovim then [
 		neovim
 		luaPackages.tree-sitter-cli
 		ripgrep
@@ -9,5 +9,5 @@
 		cmake
 		gnumake
 		nixd
-	];
+	] else [];
 }
