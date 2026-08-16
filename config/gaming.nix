@@ -1,5 +1,4 @@
-# { config, pkgs, ... }:
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
 	programs = {
@@ -25,7 +24,7 @@
 		};
 	};
 
-	# environment.systemPackages = [pkgs.osu-lazer-bin];
+	environment.systemPackages = if config.modules.osu-lazer then [pkgs.osu-lazer-bin] else [];
 
 	hardware.xpadneo.enable = config.modules.bluetooth;
 
