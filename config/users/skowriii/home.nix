@@ -1,5 +1,17 @@
 { config, osConfig, pkgs, globals, ... }:
 
+let
+	qtCommonSettings = {
+		Appearance = {
+			icon_theme = "kora";
+			standard_dialogs = "xdgdesktopportal";
+			style = "Darkly";
+			color_scheme_path = "~/.local/share/color-schemes/Matugen.colors";
+			custom_palette = true;
+		};
+		Fonts.general = "\"Inter,12\"";
+	};
+in
 {
 	home = {
 		username = "skowriii";
@@ -190,5 +202,14 @@
 		gtk4.extraCss =
 			"@import url(\"${pkgs.adw-gtk3}/share/themes/adw-gtk3-dark/gtk-4.0/gtk.css\");\n@import \"colors.css\";";
 		colorScheme = "dark";
+	};
+
+	qt = {
+		enable = true;
+		platformTheme.name = "qtct";
+		qt5ctSettings = qtCommonSettings;
+		qt6ctSettings = qtCommonSettings;
+		style.package = pkgs.darkly;
+		# style.name = "darkly";
 	};
 }

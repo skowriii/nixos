@@ -1,22 +1,6 @@
-{ pkgs, inputs, lib, ... }:
+{ pkgs, inputs, ... }:
 
-let
-	system = pkgs.stdenv.hostPlatform.system;
-
-	hyprutils = inputs.hyprqt6engine.inputs.hyprutils.packages.${system}.hyprutils.override {
-		inherit (pkgs) stdenv;
-	};
-	hyprlang = inputs.hyprqt6engine.inputs.hyprlang.packages.${system}.hyprlang.override {
-		inherit (pkgs) stdenv;
-		inherit hyprutils;
-	};
-	hyprqt6engine = (inputs.hyprqt6engine.packages.${system}.hyprqt6engine.override {
-		inherit (pkgs) stdenv;
-		inherit hyprutils hyprlang;
-	}).overrideAttrs (old: {
-		buildInputs = old.buildInputs ++ [pkgs.kdePackages.kcolorscheme pkgs.kdePackages.kconfig];
-	});
-in {
+{
 	programs = {
 		hyprland.enable = true;
 		hyprlock.enable = true;
@@ -28,13 +12,11 @@ in {
 	};
 
 	environment.systemPackages = with pkgs; [
-		# Hyprland
 		hypridle
 		hyprpolkitagent
 		hyprshot
 		hyprshutdown
 		hyprsunset
-		hyprqt6engine
 
 		quickshell
 		unixodbc # for qmlls
@@ -63,12 +45,11 @@ in {
 		glib
 		gsettings-desktop-schemas
 		adw-gtk3
-		kdePackages.frameworkintegration
+		kdePackages.frameworkintegration # for darkly
 		matugen
 		nwg-look
 		bibata-cursors
 		kora-icon-theme
-		darkly
 		qt5.qtwayland
 		qt6.qtwayland
 
@@ -93,10 +74,6 @@ in {
 	environment.variables = with pkgs; {
 		GSETTINGS_SCHEMA_DIR =
 			"${gsettings-desktop-schemas}/share/gsettings-schemas/${gsettings-desktop-schemas.name}/glib-2.0/schemas";
-		QT_PLUGIN_PATH = lib.concatStringsSep ":" [
-			"$QT_PLUGIN_PATH"
-			"${hyprqt6engine}/lib/qt-6"
-		];
 		NIXOS_OZONE_WL = "1";
 	};
 
@@ -104,7 +81,7 @@ in {
 
 	xdg.portal = {
 		enable = true;
-		extraPortals = with pkgs; [xdg-desktop-portal-gtk xdg-desktop-portal-hyprland];
+		extraPortals = with pkgs; [xdg-desktop-portal-hyprland xdg-desktop-portal-gtk];
 	};
 
 	services = {
