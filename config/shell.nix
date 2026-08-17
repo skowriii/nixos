@@ -15,7 +15,6 @@
 		atac
 		bleachbit
 		btop
-		direnv
 		duf
 		eza
 		fastfetch
