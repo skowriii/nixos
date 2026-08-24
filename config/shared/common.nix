@@ -39,6 +39,16 @@
 		keyMap = "pl";
 	};
 
+	programs = {
+		nh = {
+			enable = true;
+			clean = {
+				enable = true;
+				dates = "Sun *-*-* 22:00:00";
+			};
+		};
+	};
+
 	environment.systemPackages = with pkgs; [git curl wget mold brightnessctl nextdns];
 
 	services = {
