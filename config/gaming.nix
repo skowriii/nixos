@@ -16,7 +16,6 @@
 		};
 		steam = {
 			enable = true;
-			gamescopeSession.enable = true;
 			protontricks.enable = true;
 			dedicatedServer.openFirewall = true;
 			localNetworkGameTransfers.openFirewall = true;
