@@ -19,7 +19,6 @@
 		hyprsunset
 
 		quickshell
-		unixodbc # for qmlls
 
 		fuzzel # Application launcher
 
