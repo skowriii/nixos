@@ -15,7 +15,6 @@
 				../bluetooth.nix
 				../display-manager.nix
 				../users/skowriii/skowriii.nix
-				../home-manager.nix
 				../systemd.nix
 				../gaming.nix
 				../extras/nbfc.nix
