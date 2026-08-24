@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 	specialisation.gaming = {
@@ -22,12 +22,16 @@
 
 			specializationType = "gaming";
 
+			programs.niri.enable = true;
+
+			environment.systemPackages = [pkgs.xwayland-satellite];
+
 			services.displayManager = {
 				autoLogin = {
 					enable = true;
 					user = "skowriii";
 				};
-				defaultSession = "steam";
+				defaultSession = "niri";
 			};
 
 			powerManagement.cpuFreqGovernor = "performance";
