@@ -49,7 +49,7 @@
 		};
 	};
 
-	environment.systemPackages = with pkgs; [git curl wget mold brightnessctl nextdns];
+	environment.systemPackages = with pkgs; [git curl wget mold brightnessctl nextdns vim fuzzel];
 
 	services = {
 		nohang.enable = true;

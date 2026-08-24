@@ -20,8 +20,6 @@
 
 		quickshell
 
-		fuzzel # Application launcher
-
 		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default # Browser
 
 		# File browser related
@@ -47,7 +45,6 @@
 		kdePackages.frameworkintegration # for darkly
 		matugen
 		nwg-look
-		bibata-cursors
 		kora-icon-theme
 		qt5.qtwayland
 		qt6.qtwayland
