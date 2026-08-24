@@ -8,6 +8,7 @@
 		zoxide.enable = true;
 		zsh.enable = true;
 		foot.enable = true;
+		direnv.enable = true;
 	};
 
 	environment.systemPackages = with pkgs; [
