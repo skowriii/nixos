@@ -66,6 +66,15 @@ in
 			".password-store".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.password-store";
 		};
+		pointerCursor = {
+			enable = true;
+			x11.enable = true;
+			hyprcursor.enable = true;
+			gtk.enable = true;
+			package = pkgs.bibata-cursors;
+			name = "Bibata-Modern-Classic";
+			size = 24;
+		};
 	};
 
 	xdg = {
