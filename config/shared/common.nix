@@ -41,15 +41,7 @@
 		keyMap = "pl";
 	};
 
-	programs = {
-		nh = {
-			enable = true;
-			clean = {
-				enable = true;
-				dates = "Sun *-*-* 22:00:00";
-			};
-		};
-	};
+	programs.nh.enable = true;
 
 	environment.systemPackages = with pkgs; [
 		git
