@@ -24,7 +24,7 @@
 
 			programs.niri.enable = true;
 
-			environment.systemPackages = [pkgs.xwayland-satellite];
+			environment.systemPackages = with pkgs; [xwayland-satellite ungoogled-chromium];
 
 			services.displayManager = {
 				autoLogin = {
