@@ -6,7 +6,6 @@
 	modules = {
 		displayManager = true;
 		bluetooth = true;
-		nbfc = true;
 	};
 
 	nixpkgs.config.allowUnfree = true;
