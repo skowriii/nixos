@@ -75,7 +75,7 @@
 	systemd.oomd.enable = false;
 
 	boot.kernel.sysctl = {
-		"vm.swappiness" = 130;
+		"vm.swappiness" = 150;
 		"vm.page-cluster" = 0;
 	};
 
