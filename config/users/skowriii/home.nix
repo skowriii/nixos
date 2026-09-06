@@ -167,6 +167,15 @@ in
 			enable = true;
 			createDirectories = true;
 			package = pkgs.xdg-user-dirs-gtk;
+			desktop = "${config.home.homeDirectory}/Pulpit";
+			documents = "${config.home.homeDirectory}/Dokumenty";
+			download = "${config.home.homeDirectory}/Pobrane";
+			music = "${config.home.homeDirectory}/Muzyka";
+			pictures = "${config.home.homeDirectory}/Obrazy";
+			projects = null;
+			publicShare = null;
+			templates = null;
+			videos = "${config.home.homeDirectory}/Wideo";
 		};
 	};
 
@@ -219,6 +228,5 @@ in
 		qt5ctSettings = qtCommonSettings;
 		qt6ctSettings = qtCommonSettings;
 		style.package = pkgs.darkly;
-		# style.name = "darkly";
 	};
 }
