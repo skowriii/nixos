@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
 	programs = {
@@ -19,8 +19,6 @@
 		hyprsunset
 
 		quickshell
-
-		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default # Browser
 
 		# File browser related
 		ffmpegthumbnailer

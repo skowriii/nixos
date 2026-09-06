@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 	imports = [./options.nix];
@@ -49,7 +49,17 @@
 		};
 	};
 
-	environment.systemPackages = with pkgs; [git curl wget mold brightnessctl nextdns vim fuzzel];
+	environment.systemPackages = with pkgs; [
+		git
+		curl
+		wget
+		mold
+		brightnessctl
+		nextdns
+		vim
+		fuzzel
+		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+	];
 
 	services = {
 		nohang.enable = true;
