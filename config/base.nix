@@ -8,7 +8,6 @@
 			enable = true;
 			enableSSHSupport = true;
 		};
-		nix-ld.enable = true;
 	};
 
 	services.tlp.enable = true;
