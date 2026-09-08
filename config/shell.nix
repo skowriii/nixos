@@ -7,7 +7,6 @@
 		lazygit.enable = true;
 		zoxide.enable = true;
 		zsh.enable = true;
-		foot.enable = true;
 		direnv.enable = true;
 	};
 

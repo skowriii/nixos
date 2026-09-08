@@ -41,7 +41,10 @@
 		keyMap = "pl";
 	};
 
-	programs.nh.enable = true;
+	programs = {
+		nh.enable = true;
+		foot.enable = true;
+	};
 
 	environment.systemPackages = with pkgs; [
 		git
