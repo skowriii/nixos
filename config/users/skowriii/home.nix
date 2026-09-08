@@ -187,6 +187,15 @@ in
 				ExecStart = "%h/.local/bin/change-brightness";
 			};
 		};
+		targets.hyprland-session = {
+			Unit = {
+				Description = "Hyprland session";
+				BindsTo = "graphical-session.target";
+				Wants = "graphical-session-pre.target";
+				After = "graphical-session-pre.target";
+				PropagatesStopTo = "graphical-session.target";
+			};
+		};
 		timers.change-brightness = {
 			Unit = {
 				Description = "Change brightness at 8 AM and 10 PM every day";
