@@ -3,6 +3,6 @@
 {
 	programs.obs-studio = if config.modules.obs then {
 		enable = true;
-		plugins = [pkgs.obs-studio-plugins.wlrobs];
+		plugins = with pkgs.obs-studio-plugins; [obs-pipewire-audio-capture obs-vaapi];
 	} else {};
 }
