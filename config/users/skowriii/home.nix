@@ -16,7 +16,7 @@ in
 	home = {
 		username = "skowriii";
 		homeDirectory = "/home/skowriii";
-		stateVersion = "26.05";
+		stateVersion = "26.11";
 		activation = {
 			spotifyPrefs =
 				if osConfig.modules.spotify then
