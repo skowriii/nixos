@@ -183,14 +183,14 @@ in
 				exec = "zen --name zen -P irld1337 %U";
 				genericName = "Web Browser";
 				icon = "zen";
-				mimeType = [
-					"text/html"
-					"text/xml"
-					"application/xhtml+xml"
-					"application/vnd.mozilla.xul+xml"
-					"x-scheme-handler/http"
-					"x-scheme-handler/https"
-				];
+				# mimeType = [
+				# 	"text/html"
+				# 	"text/xml"
+				# 	"application/xhtml+xml"
+				# 	"application/vnd.mozilla.xul+xml"
+				# 	"x-scheme-handler/http"
+				# 	"x-scheme-handler/https"
+				# ];
 				name = "Zen Browser (irld1337)";
 				startupNotify = true;
 				settings = {
@@ -205,14 +205,14 @@ in
 				exec = "zen --name zen -P lacadmin %U";
 				genericName = "Web Browser";
 				icon = "zen";
-				mimeType = [
-					"text/html"
-					"text/xml"
-					"application/xhtml+xml"
-					"application/vnd.mozilla.xul+xml"
-					"x-scheme-handler/http"
-					"x-scheme-handler/https"
-				];
+				# mimeType = [
+				# 	"text/html"
+				# 	"text/xml"
+				# 	"application/xhtml+xml"
+				# 	"application/vnd.mozilla.xul+xml"
+				# 	"x-scheme-handler/http"
+				# 	"x-scheme-handler/https"
+				# ];
 				name = "Zen Browser (lacadmin)";
 				startupNotify = true;
 				settings = {
@@ -227,14 +227,14 @@ in
 				exec = "zen --name zen -P geoguessr %U";
 				genericName = "Web Browser";
 				icon = "zen";
-				mimeType = [
-					"text/html"
-					"text/xml"
-					"application/xhtml+xml"
-					"application/vnd.mozilla.xul+xml"
-					"x-scheme-handler/http"
-					"x-scheme-handler/https"
-				];
+				# mimeType = [
+				# 	"text/html"
+				# 	"text/xml"
+				# 	"application/xhtml+xml"
+				# 	"application/vnd.mozilla.xul+xml"
+				# 	"x-scheme-handler/http"
+				# 	"x-scheme-handler/https"
+				# ];
 				name = "Zen Browser (geoguessr)";
 				startupNotify = true;
 				settings = {
