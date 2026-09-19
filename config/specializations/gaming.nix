@@ -26,7 +26,17 @@
 
 			programs.niri.enable = true;
 
-			environment.systemPackages = with pkgs; [xwayland-satellite ungoogled-chromium];
+			environment = {
+				etc."niri/config.kdl".text = ''
+					input {
+						mouse {
+							accel-profile "flat"
+						}
+					}
+					spawn-at-startup "steam"
+				'';
+				systemPackages = with pkgs; [xwayland-satellite ungoogled-chromium];
+			};
 
 			services.displayManager = {
 				autoLogin = {
