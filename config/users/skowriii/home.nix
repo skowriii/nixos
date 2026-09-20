@@ -214,11 +214,25 @@ in
 	};
 
 	systemd.user = {
-		services.change-brightness = {
-			Unit.Description = "Change brightness at 8 AM and 10 PM every day";
-			Service = {
-				Type = "oneshot";
-				ExecStart = "%h/.local/bin/change-brightness";
+		services = {
+			change-brightness = {
+				Unit.Description = "Change brightness at 8 AM and 10 PM every day";
+				Service = {
+					Type = "oneshot";
+					ExecStart = "%h/.local/bin/change-brightness";
+				};
+			};
+			ss = {
+				Unit = {
+					Description = "Launch \"ss\" Quickshell configuration in \"no-duplicate\" and \"daemonized\" modes";
+					After = ["graphical-session.target" "hyprland-session.target"];
+				};
+				Service = {
+					Type = "oneshot";
+					ExecStart = "%h/.local/bin/sscli s -a";
+					RemainAfterExit = true;
+				};
+				Install.WantedBy = ["graphical-session.target" "hyprland-session.target"];
 			};
 		};
 		targets.hyprland-session = {
