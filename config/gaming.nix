@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 	programs = {
@@ -23,12 +23,12 @@
 		};
 	};
 
-	environment.systemPackages = if config.modules.osu-lazer then [pkgs.osu-lazer-bin] else [];
+	environment.systemPackages = lib.mkIf config.modules.osu-lazer [pkgs.osu-lazer-bin];
 
 	hardware.xpadneo.enable = config.modules.bluetooth;
 
 	boot = {
-		extraModprobeConfig = if config.modules.bluetooth then "options hid_xpadneo disable_shift_mode=Y" else "";
+		extraModprobeConfig = lib.mkIf config.modules.bluetooth "options hid_xpadneo disable_shift_mode=Y";
 		kernel.sysctl."vm.max_map_count" = 2147483642;
 	};
 }
