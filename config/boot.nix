@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 	boot = {
@@ -15,5 +15,6 @@
 			"audit=0" "spec_store_bypass_disable=prctl"
 			"cfg80211.ieee80211_regdom=PL"
 		];
+		extraModprobeConfig = lib.mkIf config.modules.bluetooth "options bluetooth disable_ertm=Y";
 	};
 }

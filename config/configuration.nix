@@ -16,7 +16,6 @@
 		./development.nix
 		./desktop.nix
 		./audio.nix
-		./bluetooth.nix
 		./fonts.nix
 		./gaming.nix
 		./printer.nix
