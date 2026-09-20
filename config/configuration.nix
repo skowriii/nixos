@@ -31,7 +31,6 @@
 		./extras/tmux.nix
 		./extras/virtualization.nix
 		./extras/wine.nix
-		./specializations/gaming.nix
 	];
 
 	nix = {
@@ -45,8 +44,10 @@
 		easyeffects = true;
 		neovim = true;
 		obs = true;
+		opentabletdriver = true;
 		spotify = true;
 		tmux = true;
 		wine = true;
+		osu-lazer = true;
 	};
 }
