@@ -43,6 +43,7 @@
 
 	systemd = {
 		oomd.enable = false;
+		services.NetworkManager-wait-online.enable = false;
 	};
 
 	hardware = {
