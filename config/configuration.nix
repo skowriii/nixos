@@ -14,17 +14,7 @@
 		./desktop.nix
 		./audio.nix
 		./gaming.nix
-		./extras/nbfc.nix
-		./extras/cloudflare.nix
-		./extras/docker.nix
-		./extras/easyeffects.nix
-		./extras/neovim.nix
-		./extras/obs.nix
-		./extras/opentabletdriver.nix
-		./extras/spotify.nix
-		./extras/tmux.nix
-		./extras/virtualization.nix
-		./extras/wine.nix
+		./extras.nix
 	];
 
 	nix = {
