@@ -16,7 +16,6 @@
 		./development.nix
 		./desktop.nix
 		./audio.nix
-		./fonts.nix
 		./gaming.nix
 		./printer.nix
 		./systemd.nix
