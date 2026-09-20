@@ -19,21 +19,28 @@
 		bleachbit
 		brightnessctl
 		btop
+		# cmake
 		curl
 		duf
 		eza
 		fastfetch
+		# gdb
 		git
+		gitleaks
 		ncdu
+		osv-scanner
 		ugrep
 		unrar
 		unzip
 		rivalcfg
 		pass
+		python3
+		semgrep
 		socat
 		taskwarrior3
 		tealdeer
 		wget
+		# zig
 		zip
 	];
 }

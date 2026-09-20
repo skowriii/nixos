@@ -12,7 +12,6 @@
 		./home-manager.nix
 		./shell.nix
 		./display-manager.nix
-		./development.nix
 		./desktop.nix
 		./audio.nix
 		./gaming.nix
