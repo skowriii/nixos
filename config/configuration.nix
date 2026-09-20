@@ -8,7 +8,6 @@
 		./boot.nix
 		./base.nix
 		./networking.nix
-		./networkmanager.nix
 		./users/skowriii/skowriii.nix
 		./home-manager.nix
 		./shell.nix
