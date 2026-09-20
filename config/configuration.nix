@@ -16,7 +16,6 @@
 		./desktop.nix
 		./audio.nix
 		./gaming.nix
-		./printer.nix
 		./systemd.nix
 		./extras/nbfc.nix
 		./extras/cloudflare.nix

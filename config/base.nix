@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 	time.timeZone = "Europe/Warsaw";
@@ -22,6 +22,7 @@
 			enable = true;
 			enableSSHSupport = true;
 		};
+		system-config-printer.enable = config.modules.printer;
 	};
 
 	services = {
@@ -41,6 +42,11 @@
 			arguments = ["-cache-size" "10MB"];
 		};
 		blueman.enable = config.modules.bluetooth;
+		printing = lib.mkIf config.modules.printer {
+			enable = true;
+			cups-pdf.enable = true;
+			drivers = with pkgs; [gutenprint hplip splix];
+		};
 	};
 
 	systemd = {
