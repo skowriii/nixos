@@ -23,19 +23,19 @@
 
 			fuzzel
 
-			(pkgs.buildFHSEnv {
-				name = "zen";
-				targetPkgs = pkgs: (with pkgs; [
-					ffmpeg-full
-					libva
-					mesa
-					libglvnd
-					alsa-lib
-					pipewire
-				]);
-				runScript = "${inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/zen";
-			})
-			# inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+			# (pkgs.buildFHSEnv {
+			# 	name = "zen";
+			# 	targetPkgs = pkgs: (with pkgs; [
+			# 		ffmpeg-full
+			# 		libva
+			# 		mesa
+			# 		libglvnd
+			# 		alsa-lib
+			# 		pipewire
+			# 	]);
+			# 	runScript = "${inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/zen";
+			# })
+			inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
 			# File browser related
 			ffmpegthumbnailer

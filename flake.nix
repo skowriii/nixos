@@ -6,7 +6,8 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		zen-browser = {
-			url = "github:youwen5/zen-browser-flake";
+			# url = "github:youwen5/zen-browser-flake";
+			url = "github:ErikOlesen/zen-browser-flake/fix-firefox-codecs";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		spicetify-nix = {
