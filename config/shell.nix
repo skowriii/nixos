@@ -3,6 +3,7 @@
 {
 	programs = {
 		bat.enable = true;
+		foot.enable = true;
 		fzf.fuzzyCompletion = true;
 		lazygit.enable = true;
 		zoxide.enable = true;
@@ -16,10 +17,13 @@
 		aria2
 		atac
 		bleachbit
+		brightnessctl
 		btop
+		curl
 		duf
 		eza
 		fastfetch
+		git
 		ncdu
 		ugrep
 		unrar
@@ -29,6 +33,7 @@
 		socat
 		taskwarrior3
 		tealdeer
+		wget
 		zip
 	];
 }

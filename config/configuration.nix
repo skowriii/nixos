@@ -2,11 +2,12 @@
 
 {
 	imports = [
+		./shared/options.nix
 		./hardware-configuration.nix
 		./filesystems.nix
-		./shared/common.nix
 		./boot.nix
 		./base.nix
+		./networking.nix
 		./networkmanager.nix
 		./documentation.nix
 		./users/skowriii/skowriii.nix
@@ -38,7 +39,11 @@
 		settings.experimental-features = ["nix-command" "flakes"];
 	};
 
+	nixpkgs.config.allowUnfree = true;
+
 	modules = {
+		displayManager = true;
+		bluetooth = true;
 		cloudflare = true;
 		docker = true;
 		easyeffects = true;
