@@ -14,6 +14,8 @@
 		keyMap = "pl";
 	};
 
+	documentation.nixos.enable = false;
+
 	programs = {
 		nh.enable = true;
 		gnupg.agent = {
