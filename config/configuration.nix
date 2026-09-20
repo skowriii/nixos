@@ -27,6 +27,8 @@
 	modules = {
 		displayManager = true;
 		bluetooth = true;
+		printer = false;
+		nbfc = false;
 		cloudflare = true;
 		docker = true;
 		easyeffects = true;
@@ -35,6 +37,7 @@
 		opentabletdriver = true;
 		spotify = true;
 		tmux = true;
+		virtualization = false;
 		wine = true;
 		osu-lazer = true;
 	};
