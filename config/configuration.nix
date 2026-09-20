@@ -16,7 +16,6 @@
 		./desktop.nix
 		./audio.nix
 		./gaming.nix
-		./systemd.nix
 		./extras/nbfc.nix
 		./extras/cloudflare.nix
 		./extras/docker.nix
