@@ -41,6 +41,16 @@
 			enable = true;
 			arguments = ["-cache-size" "10MB"];
 		};
+		greetd = lib.mkIf config.modules.displayManager {
+			enable = true;
+			useTextGreeter = true;
+			settings = {
+				default_session = {
+					user = "greeter";
+					command = lib.getExe' pkgs.tuigreet "tuigreet";
+				};
+			};
+		};
 		blueman.enable = config.modules.bluetooth;
 		printing = lib.mkIf config.modules.printer {
 			enable = true;

@@ -11,7 +11,6 @@
 		./users/skowriii/skowriii.nix
 		./home-manager.nix
 		./shell.nix
-		./display-manager.nix
 		./desktop.nix
 		./audio.nix
 		./gaming.nix
