@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-	environment.systemPackages = with pkgs; [udiskie acpi acpica-tools];
 
 	programs = {
 		gnupg.agent = {

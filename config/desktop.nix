@@ -11,71 +11,75 @@
 		nm-applet.enable = true;
 	};
 
-	environment.systemPackages = with pkgs; [
-		hypridle
-		hyprpolkitagent
-		hyprshot
-		hyprshutdown
-		hyprsunset
+	environment = {
+		systemPackages = with pkgs; [
+			hypridle
+			hyprpolkitagent
+			hyprshot
+			hyprshutdown
+			hyprsunset
 
-		quickshell
+			quickshell
 
-		# File browser related
-		ffmpegthumbnailer
-		kdePackages.ark
-		xdg-utils
 
-		# Images
-		eog
-		gimp
-		inkscape
 
-		# Videos
-		mpv
-		# vlc
+			# File browser related
+			ffmpegthumbnailer
+			kdePackages.ark
+			xdg-utils
+			udiskie
 
-		gnome-disk-utility # Disk manager
+			# Images
+			eog
+			gimp
+			inkscape
 
-		# Theming
-		glib
-		gsettings-desktop-schemas
-		adw-gtk3
-		kdePackages.frameworkintegration # for darkly
-		matugen
-		nwg-look
-		kora-icon-theme
-		qt5.qtwayland
-		qt6.qtwayland
+			# Videos
+			mpv
+			# vlc
 
-		pluma # Notepad
+			gnome-disk-utility # Disk manager
 
-		# Screenshots
-		grim
-		slurp
+			# Theming
+			glib
+			gsettings-desktop-schemas
+			adw-gtk3
+			kdePackages.frameworkintegration # for darkly
+			matugen
+			nwg-look
+			kora-icon-theme
+			qt5.qtwayland
+			qt6.qtwayland
 
-		# Clipboard
-		copyq
-		wl-clipboard
+			pluma # Notepad
 
-		# Wallpapers
-		awww
-		waypaper
+			# Screenshots
+			grim
+			slurp
 
-		# Torrent client
-		qbittorrent
-	];
+			# Clipboard
+			copyq
+			wl-clipboard
 
-	environment.variables = with pkgs; {
-		GSETTINGS_SCHEMA_DIR =
-			"${gsettings-desktop-schemas}/share/gsettings-schemas/${gsettings-desktop-schemas.name}/glib-2.0/schemas";
-		NIXOS_OZONE_WL = "1";
+			# Wallpapers
+			awww
+			waypaper
+
+			# Torrent client
+			qbittorrent
+		];
+		variables = with pkgs; {
+				GSETTINGS_SCHEMA_DIR =
+					"${gsettings-desktop-schemas}/share/gsettings-schemas/${gsettings-desktop-schemas.name}/glib-2.0/schemas";
+				NIXOS_OZONE_WL = "1";
+		};
 	};
 
 	qt.enable = true;
 
 	xdg.portal = {
 		enable = true;
-		extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+		extraPortals = [pkgs.xdg-desktop-portal-gtk];
 	};
 
 	services = {
@@ -83,4 +87,5 @@
 		gvfs.enable = true;
 		gnome.gnome-keyring.enable = true;
 	};
+
 }

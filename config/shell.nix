@@ -11,6 +11,8 @@
 	};
 
 	environment.systemPackages = with pkgs; [
+		acpi
+		acpica-tools
 		aria2
 		atac
 		bleachbit
