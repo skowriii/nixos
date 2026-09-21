@@ -286,4 +286,15 @@ in
 		qt6ctSettings = qtCommonSettings;
 		style.package = pkgs.darkly;
 	};
+
+	services.spotifyd = lib.mkIf osConfig.modules.spotify {
+		enable = true;
+		settings = {
+			global = {
+				zeroconf_port = 9385;
+				bitrate = 96;
+				initial_volume = 80;
+			};
+		};
+	};
 }

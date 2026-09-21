@@ -6,6 +6,7 @@
 		firewall = {
 			enable = true;
 			allowedTCPPorts = [
+				9385 # spotifyd discovery over local network
 				31536 # qBittorrent - incoming connections from peers
 				57621 # Spotify Connect
 			];
