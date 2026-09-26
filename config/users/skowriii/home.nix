@@ -145,6 +145,7 @@ in
 				source =
 					config.lib.file.mkOutOfStoreSymlink
 					"${globals.dotfilesDirectory}/home/.config/OpenTabletDriver/settings.json";
+				force = true;
 			};
 			spotdl = lib.mkIf osConfig.modules.spotify {
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/spotdl";
