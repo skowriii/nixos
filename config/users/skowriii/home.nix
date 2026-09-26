@@ -11,6 +11,20 @@ let
 		};
 		Fonts.general = "\"Inter,12\"";
 	};
+	mkZenDesktop = profileName: {
+		categories = ["Network" "WebBrowser"];
+		exec = "zen-beta --name zen-beta -P ${profileName} %U";
+		genericName = "Web Browser";
+		icon = "zen-browser";
+		name = "Zen Browser (${profileName})";
+		startupNotify = true;
+		settings = {
+			StartupWMClass = "zen-beta";
+			Version = "1.5";
+		};
+		terminal = false;
+		type = "Application";
+	};
 in
 {
 	home = {
@@ -171,48 +185,9 @@ in
 			videos = "${config.home.homeDirectory}/Wideo";
 		};
 		desktopEntries = {
-			zen-irld1337 = {
-				categories = ["Network" "WebBrowser"];
-				exec = "zen --name zen -P irld1337 %U";
-				genericName = "Web Browser";
-				icon = "zen";
-				name = "Zen Browser (irld1337)";
-				startupNotify = true;
-				settings = {
-					StartupWMClass = "zen";
-					Version = "1.5";
-				};
-				terminal = false;
-				type = "Application";
-			};
-			zen-lacadmin = {
-				categories = ["Network" "WebBrowser"];
-				exec = "zen --name zen -P lacadmin %U";
-				genericName = "Web Browser";
-				icon = "zen";
-				name = "Zen Browser (lacadmin)";
-				startupNotify = true;
-				settings = {
-					StartupWMClass = "zen";
-					Version = "1.5";
-				};
-				terminal = false;
-				type = "Application";
-			};
-			zen-geoguessr = {
-				categories = ["Network" "WebBrowser"];
-				exec = "zen --name zen -P geoguessr %U";
-				genericName = "Web Browser";
-				icon = "zen";
-				name = "Zen Browser (geoguessr)";
-				startupNotify = true;
-				settings = {
-					StartupWMClass = "zen";
-					Version = "1.5";
-				};
-				terminal = false;
-				type = "Application";
-			};
+			zen-irld1337 = mkZenDesktop "irld1337";
+			zen-lacadmin = mkZenDesktop "lacadmin";
+			zen-geoguessr = mkZenDesktop "geoguessr";
 		};
 	};
 
