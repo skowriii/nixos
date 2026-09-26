@@ -27,6 +27,7 @@
 		# gdb
 		git
 		gitleaks
+		jellyfin-tui
 		ncdu
 		osv-scanner
 		ugrep
