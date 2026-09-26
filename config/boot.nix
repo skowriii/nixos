@@ -19,6 +19,7 @@
 		kernel.sysctl = {
 			"vm.swappiness" = 150;
 			"vm.page-cluster" = 0;
+			"vm.max_map_count" = 2147483642;
 		};
 		extraModprobeConfig = lib.mkIf config.modules.bluetooth "options bluetooth disable_ertm=Y";
 	};

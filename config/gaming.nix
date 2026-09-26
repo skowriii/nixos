@@ -27,8 +27,5 @@
 
 	hardware.xpadneo.enable = config.modules.bluetooth;
 
-	boot = {
-		extraModprobeConfig = lib.mkIf config.modules.bluetooth "options hid_xpadneo disable_shift_mode=Y";
-		kernel.sysctl."vm.max_map_count" = 2147483642;
-	};
+	boot.extraModprobeConfig = lib.mkIf config.modules.bluetooth "options hid_xpadneo disable_shift_mode=Y";
 }
