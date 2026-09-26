@@ -26,7 +26,19 @@
 	};
 
 	services = {
-		tlp.enable = true;
+		auto-cpufreq = {
+			enable = true;
+			settings = {
+				battery = {
+					governor = "powersave";
+					turbo = "never";
+				};
+				charger = {
+					governor = "performance";
+					turbo = "auto";
+				};
+			};
+		};
 		nohang.enable = true;
 		irqbalance.enable = true;
 		zram-generator = {
@@ -72,8 +84,6 @@
 		amdgpu.overdrive.enable = true;
 		bluetooth.enable = config.modules.bluetooth;
 	};
-
-	powerManagement.cpuFreqGovernor = "schedutil";
 
 	system.stateVersion = "26.11";
 }
