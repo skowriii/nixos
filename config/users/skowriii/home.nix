@@ -45,8 +45,6 @@ in
 				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/change-brightness";
 			".local/bin/pwall".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/Projects/Tools/Bash/PauseWallpaper/pwall";
-			".zen".source =
-				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.zen";
 			".task".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.task";
 			".zsh".source =
@@ -150,6 +148,10 @@ in
 			};
 			spotdl = lib.mkIf osConfig.modules.spotify {
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/spotdl";
+				force = true;
+			};
+			zen = {
+				source = config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.zen";
 				force = true;
 			};
 		};
