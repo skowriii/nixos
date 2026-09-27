@@ -42,11 +42,11 @@
 				persistent = true;
 			};
 			extraPackages = [pkgs.docker-compose];
-		} ;
+		};
 		libvirtd = lib.mkIf config.modules.virtualization {
 			enable = true;
 			qemu.swtpm.enable = true;
-		} ;
+		};
 		spiceUSBRedirection.enable = config.modules.virtualization;
 	};
 
