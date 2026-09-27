@@ -71,9 +71,9 @@
 			qbittorrent
 		];
 		variables = with pkgs; {
-				GSETTINGS_SCHEMA_DIR =
-					"${gsettings-desktop-schemas}/share/gsettings-schemas/${gsettings-desktop-schemas.name}/glib-2.0/schemas";
-				NIXOS_OZONE_WL = "1";
+			GSETTINGS_SCHEMA_DIR =
+				"${gsettings-desktop-schemas}/share/gsettings-schemas/${gsettings-desktop-schemas.name}/glib-2.0/schemas";
+			NIXOS_OZONE_WL = "1";
 		};
 	};
 
