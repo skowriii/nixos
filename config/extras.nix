@@ -10,7 +10,7 @@
 		};
 		systemPackages = with pkgs; []
 			++ lib.optionals config.modules.cloudflare
-				[wrangler cloudflared]
+				[cloudflared]
 			++ lib.optionals config.modules.easyeffects
 				[calf easyeffects lsp-plugins mda_lv2 zam-plugins zita-convolver]
 			++ lib.optionals config.modules.nbfc
