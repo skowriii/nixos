@@ -31,7 +31,7 @@
 		nbfc = false;
 		cloudflare = true;
 		docker = true;
-		easyeffects = true;
+		easyeffects = false;
 		neovim = true;
 		obs = true;
 		opentabletdriver = true;
