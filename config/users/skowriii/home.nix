@@ -208,6 +208,7 @@ in
 				Service = {
 					Type = "exec";
 					ExecStart = "%h/.local/bin/sscli s -n";
+					KillMode = "process";
 				};
 				Install.WantedBy = ["graphical-session.target" "hyprland-session.target"];
 			};
