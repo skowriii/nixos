@@ -13,16 +13,21 @@
 
 	environment = {
 		systemPackages = with pkgs; [
-			hypridle
 			hyprpolkitagent
 			hyprshot
 			hyprshutdown
 			hyprsunset
 
+			# Idle daemon
+			hypridle
+			sway-audio-idle-inhibit # fix zen not inhibiting hypridle
+
 			quickshell
 
+			# Application launcher
 			fuzzel
 
+			# Browser
 			inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 
 			# File browser related
