@@ -202,13 +202,12 @@ in
 			};
 			ss = {
 				Unit = {
-					Description = "Launch \"ss\" Quickshell configuration in \"no-duplicate\" and \"daemonized\" modes";
+					Description = "Launch \"ss\" Quickshell configuration in \"no-duplicate\" mode";
 					After = ["graphical-session.target" "hyprland-session.target"];
 				};
 				Service = {
-					Type = "oneshot";
-					ExecStart = "%h/.local/bin/sscli s -a";
-					RemainAfterExit = true;
+					Type = "exec";
+					ExecStart = "%h/.local/bin/sscli s -n";
 				};
 				Install.WantedBy = ["graphical-session.target" "hyprland-session.target"];
 			};
