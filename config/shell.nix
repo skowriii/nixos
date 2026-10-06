@@ -26,17 +26,17 @@
 		fastfetch
 		# gdb
 		git
-		gitleaks
+		# gitleaks
 		jellyfin-tui
 		ncdu
-		osv-scanner
+		# osv-scanner
 		ugrep
 		unrar
 		unzip
 		rivalcfg
 		pass
 		python3
-		semgrep
+		# semgrep
 		socat
 		taskwarrior3
 		tealdeer
