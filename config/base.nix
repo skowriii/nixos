@@ -70,6 +70,10 @@
 			cups-pdf.enable = true;
 			drivers = with pkgs; [gutenprint hplip splix];
 		};
+		logind.settings.Login = {
+			HandleLidSwitchExternalPower = "lock";
+			HandleLidSwitchDocked = "ignore";
+		};
 	};
 
 	systemd = {
