@@ -19,7 +19,10 @@
 
 	nix = {
 		registry = { nixpkgs.flake = inputs.nixpkgs; };
-		settings.experimental-features = ["nix-command" "flakes"];
+		settings = {
+			experimental-features = ["nix-command" "flakes"];
+			max-jobs = 1;
+		};
 	};
 
 	nixpkgs.config.allowUnfree = true;
