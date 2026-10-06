@@ -16,15 +16,19 @@
 			url = "github:Gerg-L/spicetify-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		nix-index-database = {
+			url = "github:nix-community/nix-index-database";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+	outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, ... }: {
 		nixosConfigurations.nixbob = nixpkgs.lib.nixosSystem {
 			specialArgs = {
 				inherit inputs;
 				globals = import ./config/shared/globals.nix;
 			};
-			modules = [./config/configuration.nix];
+			modules = [./config/configuration.nix nix-index-database.nixosModules.default];
 		};
 	};
 }
