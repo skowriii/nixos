@@ -271,7 +271,7 @@ in
 			global = {
 				zeroconf_port = 9385;
 				bitrate = 96;
-				initial_volume = 80;
+				initial_volume = 70;
 			};
 		};
 	};
