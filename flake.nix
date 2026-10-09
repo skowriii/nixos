@@ -1,6 +1,6 @@
 {
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+		nixpkgs.url = "https://channels.nixos.org/nixos-unstable-small/nixexprs.tar.xz";
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
