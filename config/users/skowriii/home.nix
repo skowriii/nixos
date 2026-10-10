@@ -75,6 +75,8 @@ in
 				);
 			".password-store".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.password-store";
+			".local/bin/tresolution".source =
+				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/tresolution";
 		};
 		pointerCursor = {
 			enable = true;
