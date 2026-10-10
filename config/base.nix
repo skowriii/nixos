@@ -24,6 +24,7 @@
 		};
 		system-config-printer.enable = config.modules.printer;
 		nix-index-database.comma.enable = true;
+		nix-ld.enable = true;
 	};
 
 	services = {
