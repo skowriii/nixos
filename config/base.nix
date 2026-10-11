@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, globals, ... }:
 
 {
 	time.timeZone = "Europe/Warsaw";
@@ -15,6 +15,8 @@
 	};
 
 	documentation.nixos.enable = false;
+
+	environment.etc."tuigreet".source = "${globals.dotfilesDirectory}/etc/tuigreet";
 
 	programs = {
 		nh.enable = true;

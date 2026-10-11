@@ -171,10 +171,6 @@ in
 				source = config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.zen";
 				force = true;
 			};
-			tuigreet = {
-				source = config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.config/tuigreet";
-				force = true;
-			};
 		};
 		userDirs = {
 			enable = true;
