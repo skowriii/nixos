@@ -77,6 +77,8 @@ in
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.password-store";
 			".local/bin/tresolution".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/tresolution";
+			".local/bin/check-kernel-version".source =
+				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/check-kernel-version";
 		};
 		pointerCursor = {
 			enable = true;
@@ -214,6 +216,16 @@ in
 				};
 				Install.WantedBy = ["graphical-session.target" "hyprland-session.target"];
 			};
+			check-kernel-version = {
+				Unit = {
+					Description = "Check kernel version every hour";
+					After = ["graphical-session.target" "hyprland-session.target"];
+				};
+				Service = {
+					Type = "oneshot";
+					ExecStart = "%h/.local/bin/check-kernel-version";
+				};
+			};
 		};
 		targets.hyprland-session = {
 			Unit = {
@@ -224,18 +236,33 @@ in
 				PropagatesStopTo = "graphical-session.target";
 			};
 		};
-		timers.change-brightness = {
-			Unit = {
-				Description = "Change brightness at 8 AM and 10 PM every day";
-				After = ["multi-user.target"];
+		timers = {
+			change-brightness = {
+				Unit = {
+					Description = "Change brightness at 8 AM and 10 PM every day";
+					After = ["multi-user.target"];
+				};
+				Timer = {
+					OnCalendar = ["*-*-* 8:00" "*-*-* 22:00"];
+					AccuracySec = "1us";
+					Persistent = true;
+					Unit = "change-brightness.service";
+				};
+				Install.WantedBy = ["timers.target"];
 			};
-			Timer = {
-				OnCalendar = ["*-*-* 8:00" "*-*-* 22:00"];
-				AccuracySec = "1us";
-				Persistent = true;
-				Unit = "change-brightness.service";
+			check-kernel-version = {
+				Unit = {
+					Description = "Check kernel version every hour";
+					After = ["graphical-session.target" "hyprland-session.target"];
+				};
+				Timer = {
+					OnCalendar = "hourly";
+					AccuracySec = "1us";
+					Persistent = true;
+					Unit = "check-kernel-version.service";
+				};
+				Install.WantedBy = ["timers.target"];
 			};
-			Install.WantedBy = ["timers.target"];
 		};
 	};
 
