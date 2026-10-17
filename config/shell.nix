@@ -35,7 +35,6 @@
 		unzip
 		rivalcfg
 		pass
-		python3
 		# semgrep
 		socat
 		taskwarrior3
