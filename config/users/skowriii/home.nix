@@ -56,9 +56,9 @@ in
 			".gitconfig".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.gitconfig";
 			".local/bin/change-brightness".source =
-				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/change-brightness";
+				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/change-brightness.sh";
 			".local/bin/pwall".source =
-				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/Projects/Tools/Bash/PauseWallpaper/pwall";
+				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/Projects/Tools/Bash/PauseWallpaper/pwall.sh";
 			".task".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.task";
 			".zsh".source =
@@ -69,16 +69,16 @@ in
 				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.zshenv";
 			".local/bin/sscli".source =
 				config.lib.file.mkOutOfStoreSymlink
-					"${globals.rootDirectory}/Projects/Applications/QML/ss/Scripts/sscli/sscli";
+					"${globals.rootDirectory}/Projects/Applications/QML/ss/Scripts/sscli/sscli.sh";
 			".tmux.conf".source = lib.mkIf osConfig.modules.tmux (
 					config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.tmux.conf"
 				);
 			".password-store".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/.password-store";
 			".local/bin/tresolution".source =
-				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/tresolution";
+				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/tresolution.sh";
 			".local/bin/check-kernel-version".source =
-				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/check-kernel-version";
+				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/check-kernel-version.py";
 		};
 		pointerCursor = {
 			enable = true;
