@@ -27,6 +27,7 @@
 		# gdb
 		git
 		# gitleaks
+		hydra-check
 		jellyfin-tui
 		ncdu
 		# osv-scanner
