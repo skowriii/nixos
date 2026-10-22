@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 	imports = [
@@ -18,7 +18,17 @@
 	];
 
 	nix = {
-		registry = { nixpkgs.flake = inputs.nixpkgs; };
+		registry = {
+			nixpkgs.flake = inputs.nixpkgs;
+			nixpkgs.to = {
+				type = "path";
+				path = pkgs.path;
+				narHash = builtins.readFile
+					(pkgs.buildPackages.runCommandLocal "get-nixpkgs-hash"
+						{ nativeBuildInputs = [pkgs.buildPackages.nix]; }
+						"nix-hash --type sha256 --sri ${pkgs.path} > $out");
+			};
+		};
 		settings = {
 			experimental-features = ["nix-command" "flakes"];
 			max-jobs = 1;
