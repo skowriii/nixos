@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Clone dotfiles
+        run: /usr/bin/git clone https://github.com/skowriii/dotfiles.git /home/runner/dotfiles
       - uses: cachix/install-nix-action@v25
       - uses: cachix/cachix-action@v14
         with:
