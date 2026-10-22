@@ -98,7 +98,6 @@
 
 	fonts.packages = with pkgs; [
 		inter
-		nerd-fonts.jetbrains-mono
 		nerd-fonts._0xproto
 		noto-fonts
 		noto-fonts-cjk-sans
