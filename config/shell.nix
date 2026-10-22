@@ -19,7 +19,6 @@
 		bleachbit
 		brightnessctl
 		btop
-		cachix
 		# cmake
 		codex
 		curl

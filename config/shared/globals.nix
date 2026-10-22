@@ -1,5 +1,5 @@
 let
-	rootDirectory = "/home/runner/";
+	rootDirectory = "/personal";
 	dotfilesDirectory = "${rootDirectory}/dotfiles";
 	nbfcModel = "HP ProBook 650 G2";
 in
