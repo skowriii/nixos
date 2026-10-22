@@ -19,7 +19,9 @@
 		bleachbit
 		brightnessctl
 		btop
+		cachix
 		# cmake
+		codex
 		curl
 		duf
 		eza
