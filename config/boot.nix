@@ -1,6 +1,8 @@
 { config, pkgs, lib, ... }:
 
 {
+	environment.systemPackages = [pkgs.efibootmgr];
+
 	boot = {
 		loader = {
 			systemd-boot.enable = true;
