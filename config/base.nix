@@ -38,7 +38,7 @@
 					turbo = "never";
 				};
 				charger = {
-					governor = "performance";
+					governor = "schedutil";
 					turbo = "auto";
 				};
 			};
