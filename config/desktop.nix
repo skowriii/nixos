@@ -53,7 +53,6 @@
 			adw-gtk3
 			kdePackages.frameworkintegration # for darkly
 			matugen
-			nwg-look
 			kora-icon-theme
 			qt5.qtwayland
 			qt6.qtwayland
