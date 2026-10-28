@@ -15,34 +15,26 @@
 		acpi
 		acpica-tools
 		aria2
-		atac
-		bleachbit
 		brightnessctl
 		btop
-		# cmake
 		codex
 		curl
 		duf
 		eza
 		fastfetch
-		# gdb
 		git
-		# gitleaks
 		hydra-check
 		jellyfin-tui
 		ncdu
-		# osv-scanner
 		ugrep
 		unrar
 		unzip
 		rivalcfg
 		pass
-		# semgrep
 		socat
 		taskwarrior3
 		tealdeer
 		wget
-		# zig
 		zip
 	];
 }
