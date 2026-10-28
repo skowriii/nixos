@@ -25,16 +25,7 @@
 					gnumake
 					nixd
 					bash-language-server
-					clang-tools
-					cmake-language-server
-					css-variables-language-server
-					vscode-css-languageserver
-					vscode-html-languageserver
 					lua-language-server
-					python314Packages.python-lsp-server
-					svelte-language-server
-					typescript-language-server
-					zls
 				]
 			++ lib.optionals config.modules.spotify
 				[spotdl]
