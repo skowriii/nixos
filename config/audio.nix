@@ -16,7 +16,6 @@
 
 	environment.systemPackages = with pkgs; [
 		audacity
-		gst_all_1.gst-plugins-good
 		kew
 		pavucontrol
 		picard

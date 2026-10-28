@@ -16,7 +16,16 @@
 
 	documentation.nixos.enable = false;
 
-	environment.etc."tuigreet".source = "${globals.dotfilesDirectory}/etc/tuigreet";
+	environment = {
+		etc."tuigreet".source = "${globals.dotfilesDirectory}/etc/tuigreet";
+		systemPackages = with pkgs; [
+			gst_all_1.gstreamer
+			gst_all_1.gst-plugins-base
+			gst_all_1.gst-plugins-good
+			gst_all_1.gst-plugins-bad
+			gst_all_1.gst-plugins-ugly
+		];
+	};
 
 	programs = {
 		nh.enable = true;
