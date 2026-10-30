@@ -191,7 +191,6 @@ in
 		desktopEntries = {
 			zen-irld1337 = mkZenDesktop "irld1337";
 			zen-lacadmin = mkZenDesktop "lacadmin";
-			zen-geoguessr = mkZenDesktop "geoguessr";
 		};
 	};
 
