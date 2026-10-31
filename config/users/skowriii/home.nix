@@ -79,6 +79,8 @@ in
 				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/tresolution.sh";
 			".local/bin/check-kernel-version".source =
 				config.lib.file.mkOutOfStoreSymlink "${globals.dotfilesDirectory}/home/.local/bin/check-kernel-version.py";
+			".local/share/osu".source =
+				config.lib.file.mkOutOfStoreSymlink "${globals.rootDirectory}/Games/osu";
 		};
 		pointerCursor = {
 			enable = true;
