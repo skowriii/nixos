@@ -86,7 +86,6 @@
 			enable = true;
 			enabledExtensions = with inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system}.extensions; [
 				adblock
-				fullAppDisplay
 				volumePercentage
 				{
 					src = "${pkgs.fetchFromGitHub {
