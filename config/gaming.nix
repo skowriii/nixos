@@ -23,7 +23,11 @@
 		};
 	};
 
-	environment.systemPackages = lib.mkIf config.modules.osu-lazer [pkgs.osu-lazer-bin];
+	environment.systemPackages = with pkgs; []
+		++ lib.optionals config.modules.osu-lazer
+			[osu-lazer-bin]
+		++ lib.optionals config.modules.minecraft
+			[prismlauncher];
 
 	hardware.xpadneo.enable = config.modules.bluetooth;
 

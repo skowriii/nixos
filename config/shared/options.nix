@@ -17,5 +17,6 @@
 		virtualization = lib.mkEnableOption "virtualization";
 		wine = lib.mkEnableOption "wine";
 		osu-lazer = lib.mkEnableOption "osu!lazer";
+		minecraft = lib.mkEnableOption "minecraft";
 	};
 }
