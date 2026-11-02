@@ -19,14 +19,16 @@
 
 	nix = {
 		registry = {
-			nixpkgs.flake = inputs.nixpkgs;
-			nixpkgs.to = {
-				type = "path";
-				path = pkgs.path;
-				narHash = builtins.readFile
-					(pkgs.buildPackages.runCommandLocal "get-nixpkgs-hash"
-						{ nativeBuildInputs = [pkgs.buildPackages.nix]; }
-						"nix-hash --type sha256 --sri ${pkgs.path} > $out");
+			nixpkgs = {
+				flake = inputs.nixpkgs;
+				to = {
+					type = "path";
+					path = pkgs.path;
+					narHash = builtins.readFile
+						(pkgs.buildPackages.runCommandLocal "get-nixpkgs-hash"
+						 { nativeBuildInputs = [pkgs.buildPackages.nix]; }
+						 "nix-hash --type sha256 --sri ${pkgs.path} > $out");
+				};
 			};
 		};
 		settings = {
@@ -37,7 +39,10 @@
 		};
 	};
 
-	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config = {
+		allowUnfree = true;
+		problems.handlers."gtk+".broken = "warn";
+	};
 
 	modules = {
 		displayManager = true;
@@ -55,5 +60,6 @@
 		virtualization = false;
 		wine = true;
 		osu-lazer = true;
+		minecraft = true;
 	};
 }

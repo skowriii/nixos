@@ -2,7 +2,6 @@
 
 {
 	programs = {
-		# hyprland.enable = true;
 		hyprland = {
 			enable = true;
 			package = globals.getFromCache { package = "hyprland"; pkgs = pkgs; };
