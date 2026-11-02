@@ -86,6 +86,7 @@
 			HandleLidSwitchExternalPower = "lock";
 			HandleLidSwitchDocked = "ignore";
 		};
+		upower.enable = true;
 	};
 
 	systemd = {
