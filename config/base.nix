@@ -45,6 +45,9 @@
 				battery = {
 					governor = "powersave";
 					turbo = "never";
+					enable_thresholds = true;
+					start_threshold = 20;
+					stop_threshold = 80;
 				};
 				charger = {
 					governor = "schedutil";
