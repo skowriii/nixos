@@ -76,6 +76,9 @@
 
 			# Torrent client
 			qbittorrent
+
+			# Notifications
+			libnotify
 		];
 		variables = with pkgs; {
 			GSETTINGS_SCHEMA_DIR =
