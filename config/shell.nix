@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, globals, ... }:
 
 {
 	programs = {
@@ -24,7 +24,7 @@
 		fastfetch
 		git
 		hydra-check
-		jellyfin-tui
+		(globals.getFromCache { package = "jellyfin-tui"; pkgs = pkgs; })
 		ncdu
 		ugrep
 		unrar
@@ -32,7 +32,7 @@
 		rivalcfg
 		pass
 		socat
-		taskwarrior3
+		(globals.getFromCache { package = "taskwarrior3"; pkgs = pkgs; })
 		tealdeer
 		wget
 		zip
