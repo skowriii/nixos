@@ -1,11 +1,8 @@
-{ inputs, pkgs, globals, ... }:
+{ inputs, pkgs, ... }:
 
 {
 	programs = {
-		hyprland = {
-			enable = true;
-			package = globals.getFromCache { package = "hyprland"; pkgs = pkgs; };
-		};
+		hyprland.enable = true;
 		hyprlock.enable = true;
 		thunar = {
 			enable = true;
