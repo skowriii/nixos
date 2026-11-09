@@ -39,10 +39,7 @@
 		};
 	};
 
-	nixpkgs.config = {
-		allowUnfree = true;
-		problems.handlers."gtk+".broken = "warn";
-	};
+	nixpkgs.config.allowUnfree = true;
 
 	modules = {
 		displayManager = true;
