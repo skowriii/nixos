@@ -24,7 +24,7 @@
 		fastfetch
 		git
 		hydra-check
-		(globals.getFromCache { package = "jellyfin-tui"; pkgs = pkgs; })
+		jellyfin-tui
 		ncdu
 		ugrep
 		unrar
@@ -32,7 +32,7 @@
 		rivalcfg
 		pass
 		socat
-		(globals.getFromCache { package = "taskwarrior3"; pkgs = pkgs; })
+		taskwarrior3
 		tealdeer
 		wget
 		zip
