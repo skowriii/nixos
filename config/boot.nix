@@ -11,7 +11,6 @@
 		};
 		kernelPackages = pkgs.linuxPackages_xanmod_latest;
 		kernelParams = [
-			"amdgpu.dcdebugmask=0x410" # Fixes certain screen bugs
 			"nowatchdog" # Disables watchdog
 			"nvme_core.default_ps_max_latency_us=0" # Disables the most aggressive NVME disk sleep states
 			"audit=0" # Turns off kernel security auditing
