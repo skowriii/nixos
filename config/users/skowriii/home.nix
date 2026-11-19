@@ -217,6 +217,17 @@ in
 				};
 				Install.WantedBy = ["graphical-session.target" "hyprland-session.target"];
 			};
+			sway-audio-idle-inhibit = {
+				Unit = {
+					Description = "Launch sway-audio-idle-inhibit on Hyprland start";
+					After = ["graphical-session.target" "hyprland-session.target"];
+				};
+				Service = {
+					Type = "exec";
+					ExecStart = "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit";
+				};
+				Install.WantedBy = ["graphical-session.target" "hyprland-session.target"];
+			};
 			check-kernel-version = {
 				Unit = {
 					Description = "Check kernel version every hour";
