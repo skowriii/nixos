@@ -28,7 +28,10 @@
 				inherit inputs;
 				globals = import ./config/shared/globals.nix;
 			};
-			modules = [./config/configuration.nix nix-index-database.nixosModules.default];
+			modules = [
+				./config/configuration.nix
+				nix-index-database.nixosModules.default
+			];
 		};
 	};
 }
