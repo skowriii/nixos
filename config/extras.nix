@@ -60,21 +60,36 @@
 		spiceUSBRedirection.enable = config.modules.virtualization;
 	};
 
-	systemd.services.nbfc_service = lib.mkIf config.modules.nbfc {
-		description = "NoteBook FanControl service";
-		path = [pkgs.kmod];
-		serviceConfig = {
-			Type = "simple";
-			# Drop any saved fixed fan speed. Without this a manual "nbfc set -s"
-			# survives reboots and silently disables the profile's fan curve.
-			ExecStartPre = "${pkgs.coreutils}/bin/rm -f /var/lib/nbfc/state.json";
-			ExecStart = "${pkgs.nbfc-linux}/bin/nbfc_service --config-file /etc/nbfc/nbfc.json";
-			Restart = "on-failure";
-			RestartSec = 5;
-			StateDirectory = "nbfc";
+	systemd.services = {
+		nbfc_service = lib.mkIf config.modules.nbfc {
+			description = "NoteBook FanControl service";
+			path = [pkgs.kmod];
+			serviceConfig = {
+				Type = "simple";
+				# Drop any saved fixed fan speed. Without this a manual "nbfc set -s"
+				# survives reboots and silently disables the profile's fan curve.
+				ExecStartPre = "${pkgs.coreutils}/bin/rm -f /var/lib/nbfc/state.json";
+				ExecStart = "${pkgs.nbfc-linux}/bin/nbfc_service --config-file /etc/nbfc/nbfc.json";
+				Restart = "on-failure";
+				RestartSec = 5;
+				StateDirectory = "nbfc";
+			};
+			startLimitIntervalSec = 60;
+			wantedBy = ["multi-user.target"];
 		};
-		startLimitIntervalSec = 60;
-		wantedBy = ["multi-user.target"];
+		cloudflared-lacgit = lib.mkIf config.modules.cloudflare {
+			description = "Cloudflare Tunnel for git.laccaria.pl";
+			wantedBy = [ "multi-user.target" ];
+			wants = [ "network-online.target" ];
+			after = [ "network-online.target" ];
+			serviceConfig = {
+				DynamicUser = true;
+				LoadCredential = "token:/personal/Projects/Laccaria/docker/token";
+				ExecStart = "${pkgs.cloudflared}/bin/cloudflared tunnel --no-autoupdate run --token-file %d/token";
+				Restart = "on-failure";
+				RestartSec = "5s";
+			};
+		};
 	};
 
 	programs = {
