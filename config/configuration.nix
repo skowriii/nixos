@@ -57,6 +57,6 @@
 		virtualization = false;
 		wine = true;
 		osu-lazer = true;
-		minecraft = true;
+		minecraft = false;
 	};
 }
