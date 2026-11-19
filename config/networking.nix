@@ -6,6 +6,7 @@
 		firewall = {
 			enable = true;
 			allowedTCPPorts = [
+				7844 # Cloudflared Tunnels
 				9385 # spotifyd discovery over local network
 				31536 # qBittorrent - incoming connections from peers
 				57621 # Spotify Connect
@@ -14,6 +15,7 @@
 				1900 # SSDP - qBittorrent and Spotify
 				5353 # mDNS - Spotify Connect
 				6771 # qBittorrent
+				7844 # Cloudflared Tunnels
 				31536 # qBittorrent
 				57621 # Spotify Connect
 			];
