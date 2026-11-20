@@ -67,7 +67,7 @@
 		libinput.enable = true;
 		nextdns = {
 			enable = true;
-			arguments = ["-cache-size" "10MB"];
+			arguments = ["-cache-size" "10MB" "-profile" "9bbfe9"];
 		};
 		greetd = lib.mkIf config.modules.displayManager {
 			enable = true;
