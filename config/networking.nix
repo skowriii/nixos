@@ -1,5 +1,28 @@
 { config, ... }:
 
+let
+	mkWifi = { ssid, var }: {
+		connection = {
+			id = ssid;
+			type = "wifi";
+			interface-name = "wlp2s0";
+		};
+		wifi = {
+			mode = "infrastructure";
+			ssid = ssid;
+		};
+		wifi-security = {
+			auth-alg = "open";
+			key-mgmt = "wpa-psk";
+			psk = "\${${var}}";
+		};
+		ipv4 = { method = "auto"; };
+		ipv6 = {
+			addr-gen-mode = "default";
+			method = "auto";
+		};
+	};
+in
 {
 	networking = {
 		hostName = "nixbob";
@@ -47,27 +70,7 @@
 							method = "disabled";
 						};
 					};
-					freewifi = {
-						connection = {
-							id = "freewifi";
-							type = "wifi";
-							interface-name = "wlp2s0";
-						};
-						wifi = {
-							mode = "infrastructure";
-							ssid = "freewifi";
-						};
-						wifi-security = {
-							auth-alg = "open";
-							key-mgmt = "wpa-psk";
-							psk = "\${FREEWIFI_PSK}";
-						};
-						ipv4 = { method = "auto"; };
-						ipv6 = {
-							addr-gen-mode = "default";
-							method = "auto";
-						};
-					};
+					freewifi = mkWifi { ssid = "freewifi"; var = "FREEWIFI_PSK"; };
 				};
 			};
 		};
