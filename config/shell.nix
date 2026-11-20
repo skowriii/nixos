@@ -1,4 +1,4 @@
-{ pkgs, globals, ... }:
+{ pkgs, ... }:
 
 {
 	programs = {
@@ -32,6 +32,7 @@
 		rivalcfg
 		pass
 		socat
+		sops
 		taskwarrior3
 		tealdeer
 		wget

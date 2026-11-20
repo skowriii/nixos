@@ -20,15 +20,20 @@
 			url = "github:nix-community/nix-index-database";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		sops-nix = {
+			url = "github:Mic92/sops-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, ... }: {
+	outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, sops-nix, ... }: {
 		nixosConfigurations.nixbob = nixpkgs.lib.nixosSystem {
 			specialArgs = {
 				inherit inputs;
 				globals = import ./config/shared/globals.nix;
 			};
 			modules = [
+				./sops.nix
 				./config/configuration.nix
 				nix-index-database.nixosModules.default
 			];
