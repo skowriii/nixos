@@ -79,7 +79,6 @@
 		};
 		cloudflared-lacgit = lib.mkIf config.modules.cloudflare {
 			description = "Cloudflare Tunnel for git.laccaria.pl";
-			wantedBy = [ "multi-user.target" ];
 			wants = [ "network-online.target" ];
 			after = [ "network-online.target" ];
 			serviceConfig = {
