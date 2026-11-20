@@ -71,6 +71,7 @@ in
 						};
 					};
 					freewifi = mkWifi { ssid = "freewifi"; var = "FREEWIFI_PSK"; };
+					MIM-KOMPUTER_Network = mkWifi { ssid = "MIM-KOMPUTER_Network"; var = "MIM_KOMPUTER_NETWORK_PSK"; };
 				};
 			};
 		};
