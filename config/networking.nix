@@ -47,28 +47,6 @@
 							method = "disabled";
 						};
 					};
-					freeethernet-cloudflare = {
-						connection = {
-							id = "freeethernet-cloudflare";
-							type = "ethernet";
-							autoconnect-priority = 998;
-							interface-name = "enp1s0";
-						};
-						ethernet = {
-							duplex = "full";
-							speed = 1000;
-						};
-						ipv4 = {
-							address1 = "192.168.9.100/24";
-							dns = "1.1.1.1;1.0.0.1";
-							gateway = "192.168.9.1";
-							method = "manual";
-						};
-						ipv6 = {
-							addr-gen-mode = "stable-privacy";
-							method = "disabled";
-						};
-					};
 					freewifi = {
 						connection = {
 							id = "freewifi";
