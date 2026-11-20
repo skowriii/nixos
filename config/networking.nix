@@ -1,4 +1,4 @@
-{ globals, ... }:
+{ config, ... }:
 
 {
 	networking = {
@@ -23,7 +23,7 @@
 		networkmanager = {
 			enable = true;
 			ensureProfiles = {
-				environmentFiles = ["${globals.rootDirectory}/secrets/networkmanager.env"];
+				environmentFiles = [config.sops.templates."networkmanager.env".path];
 				profiles = {
 					freeethernet = {
 						connection = {
