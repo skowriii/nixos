@@ -13,6 +13,7 @@
 		./spotdl.nix
 		./jellyfin.nix
 		./silverbullet.nix
+		./cloudflared.nix
 	];
 
 	nix = {
