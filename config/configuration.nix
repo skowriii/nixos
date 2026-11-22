@@ -6,6 +6,7 @@
 		./boot.nix
 		./networking.nix
 		./shell.nix
+		./silverbullet.nix
 	];
 
 	nix = {

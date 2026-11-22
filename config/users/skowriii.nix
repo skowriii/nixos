@@ -7,6 +7,7 @@
 			"audio"
 			"input"
 			"networkmanager"
+			config.services.silverbullet.group
 		];
 		shell = pkgs.bash;
 	};
