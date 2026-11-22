@@ -8,6 +8,7 @@
 		./networking.nix
 		./ssh.nix
 		./mnt.nix
+		./users/skowriii.nix
 		./shell.nix
 		./spotdl.nix
 		./jellyfin.nix

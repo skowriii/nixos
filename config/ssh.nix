@@ -14,7 +14,7 @@
 			}
 		];
 		settings = {
-			PermitRootLogin = false;
+			PermitRootLogin = "no";
 			PasswordAuthentication = false;
 			KbdInteractiveAuthentication = false;
 			UsePAM = true;

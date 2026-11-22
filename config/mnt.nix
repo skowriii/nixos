@@ -16,7 +16,7 @@
 		};
 		"/mnt/music".d = {
 			user = "skowriii";
-			group = "users";
+			group = "skowrii";
 			mode = "0770";
 			age = "-";
 		};
