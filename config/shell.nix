@@ -18,6 +18,7 @@
 		ncdu
 		sops
 		ugrep
+		neovim
 		wget
 	];
 }
