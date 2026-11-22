@@ -14,6 +14,7 @@
 		curl
 		duf
 		git
+		lazygit
 		ncdu
 		sops
 		ugrep
