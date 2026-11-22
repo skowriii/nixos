@@ -8,6 +8,7 @@
 			"input"
 			"networkmanager"
 			config.services.silverbullet.group
+			config.services.navidrome.group
 		];
 		shell = pkgs.bash;
 		openssh.authorizedKeys = [

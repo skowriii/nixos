@@ -10,6 +10,7 @@
 		./mnt.nix
 		./shell.nix
 		./spotdl.nix
+		./navidrome.nix
 		./silverbullet.nix
 	];
 
