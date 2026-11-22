@@ -6,6 +6,7 @@
 		./boot.nix
 		./logind.nix
 		./networking.nix
+		./ssh.nix
 		./shell.nix
 		./silverbullet.nix
 	];
