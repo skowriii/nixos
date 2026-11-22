@@ -12,6 +12,7 @@
 		kernelPackages = pkgs.linuxPackages;
 		kernelParams = [
 			"cfg80211.ieee80211_regdom=PL" # Configures regulatory domain for wireless networks to PL (Poland)
+			"consoleblank=30"
 		];
 		kernel.sysctl = {
 			"vm.swappiness" = 150;
