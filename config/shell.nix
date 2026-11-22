@@ -10,6 +10,7 @@
 		acpi
 		acpica-tools
 		btop
+		cloudflared
 		curl
 		duf
 		git
