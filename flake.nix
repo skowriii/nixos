@@ -10,7 +10,10 @@
 	outputs = inputs@{ self, nixpkgs, ... }: {
 		nixosConfigurations.skurwiii = nixpkgs.lib.nixosSystem {
 			specialArgs = { inherit inputs; };
-			modules = [./config/configuration.nix];
+			modules = [
+				./sops.nix
+				./config/configuration.nix
+			];
 		};
 	};
 }

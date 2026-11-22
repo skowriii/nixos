@@ -1,7 +1,7 @@
 keys:
-  - &skowriii_sops 6B848C6BBE0C202B8EA542B816C2DE55234AB30B
+  - &primary age156fkqjy00u70l08xc9je63kaac0v4a6w2mf3ht3gquguzh76fsgsl092nd
 creation_rules:
-  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+  - path_regex: secrets/secrets.yaml$
     key_groups:
-      - pgp:
-        - *skowriii_sops
+      - age:
+        - *primary
