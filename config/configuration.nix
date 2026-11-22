@@ -9,6 +9,7 @@
 		./ssh.nix
 		./mnt.nix
 		./shell.nix
+		./spotdl.nix
 		./silverbullet.nix
 	];
 
