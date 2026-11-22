@@ -7,6 +7,7 @@
 		./logind.nix
 		./networking.nix
 		./ssh.nix
+		./mnt.nix
 		./shell.nix
 		./silverbullet.nix
 	];
