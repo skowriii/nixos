@@ -4,6 +4,7 @@
 	imports = [
 		./hardware-configuration.nix
 		./boot.nix
+		./logind.nix
 		./networking.nix
 		./shell.nix
 		./silverbullet.nix
