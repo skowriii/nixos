@@ -5,7 +5,6 @@
 		./hardware-configuration.nix
 		./boot.nix
 		./networking.nix
-		./users/skowriii/skowriii.nix
 		./shell.nix
 	];
 
