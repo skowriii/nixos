@@ -51,7 +51,7 @@
 		docker = true;
 		easyeffects = false;
 		neovim = true;
-		obs = false;
+		obs = true;
 		opentabletdriver = true;
 		spotify = true;
 		tmux = true;
