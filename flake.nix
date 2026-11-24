@@ -30,7 +30,7 @@
 		};
 	};
 
-	outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, sops-nix, ... }: {
+	outputs = inputs@{ self, nixpkgs, ... }: {
 		nixosConfigurations.nixbob = nixpkgs.lib.nixosSystem {
 			specialArgs = {
 				inherit inputs;
@@ -39,7 +39,7 @@
 			modules = [
 				./sops.nix
 				./config/configuration.nix
-				nix-index-database.nixosModules.default
+				inputs.nix-index-database.nixosModules.default
 			];
 		};
 	};
