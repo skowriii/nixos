@@ -20,6 +20,27 @@
         "type": "github"
       }
     },
+    "jagex-launcher": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792496058,
+        "narHash": "sha256-MiW06+rQEH157IHV86mOhAFsJtBl1xWlQ/tqBWlrd+E=",
+        "owner": "Kahnix",
+        "repo": "jagex-launcher-nix",
+        "rev": "33a56bd011fc30c8e3554d0b8ca174116fff5f25",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kahnix",
+        "ref": "nixpkgs-runelite",
+        "repo": "jagex-launcher-nix",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -56,6 +77,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "jagex-launcher": "jagex-launcher",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs",
         "sops-nix": "sops-nix",

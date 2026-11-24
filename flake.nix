@@ -24,6 +24,10 @@
 			url = "github:Mic92/sops-nix";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		jagex-launcher = {
+			url = "github:Kahnix/jagex-launcher-nix/nixpkgs-runelite";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = inputs@{ self, nixpkgs, home-manager, nix-index-database, sops-nix, ... }: {

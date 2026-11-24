@@ -3,6 +3,8 @@
 {
 	imports = [inputs.spicetify-nix.nixosModules.spicetify];
 
+	nixpkgs.overlays = [] ++ lib.optionals config.modules.osrs [inputs.jagex-launcher.overlays.default];
+
 	environment = {
 		etc."nbfc/nbfc.json" = {
 			enable = config.modules.nbfc;
@@ -34,7 +36,9 @@
 			++ lib.optionals config.modules.virtualization
 				[iproute2 libguestfs]
 			++ lib.optionals config.modules.wine
-				[lutris wineWow64Packages.stable winetricks];
+				[lutris wineWow64Packages.stable winetricks]
+			++ lib.optionals config.modules.osrs
+				[jagex-launcher];
 	};
 
 	users.users.skowriii.extraGroups = []

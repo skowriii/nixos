@@ -18,5 +18,6 @@
 		wine = lib.mkEnableOption "wine";
 		osu-lazer = lib.mkEnableOption "osu!lazer";
 		minecraft = lib.mkEnableOption "minecraft";
+		osrs = lib.mkEnableOption "Old School RuneScape";
 	};
 }

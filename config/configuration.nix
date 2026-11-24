@@ -59,5 +59,6 @@
 		wine = true;
 		osu-lazer = false;
 		minecraft = false;
+		osrs = true;
 	};
 }
