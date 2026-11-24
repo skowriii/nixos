@@ -57,7 +57,7 @@
 		tmux = true;
 		virtualization = false;
 		wine = true;
-		osu-lazer = true;
+		osu-lazer = false;
 		minecraft = false;
 	};
 }
