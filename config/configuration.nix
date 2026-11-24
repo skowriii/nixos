@@ -52,7 +52,7 @@
 		easyeffects = false;
 		neovim = true;
 		obs = true;
-		opentabletdriver = true;
+		opentabletdriver = false;
 		spotify = true;
 		tmux = true;
 		virtualization = false;
