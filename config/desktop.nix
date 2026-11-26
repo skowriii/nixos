@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, globals, ... }:
 
 {
 	programs = {
@@ -106,4 +106,19 @@
 		noto-fonts-cjk-serif
 		noto-fonts-color-emoji
 	];
+
+	systemd.tmpfiles.settings."10-hypr-luarc"."${globals.dotfilesDirectory}/.luarc.json".F = {
+		age = "-";
+		mode = "0644";
+		user = "skowriii";
+		group = "users";
+		argument = ''
+{
+	"workspace": {
+		"library": [
+			"${pkgs.hyprland}/share/hypr/stubs"
+		]
+	}
+}'';
+	};
 }
