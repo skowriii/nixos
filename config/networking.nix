@@ -76,4 +76,17 @@ in
 			};
 		};
 	};
+
+	services.resolved = {
+		enable = true;
+		settings.Resolve = {
+			DNS = [
+				"45.90.28.0#9bbfe9.dns.nextdns.io"
+				"2a07:a8c0::#9bbfe9.dns.nextdns.io"
+				"45.90.30.0#9bbfe9.dns.nextdns.io"
+				"2a07:a8c1::#9bbfe9.dns.nextdns.io"
+			];
+			DNSOverTLS = true;
+		};
+	};
 }
